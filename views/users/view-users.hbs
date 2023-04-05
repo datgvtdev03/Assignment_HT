@@ -1,0 +1,27 @@
+
+<div class="container">
+  <h3>Danh sách thành viên<a href="/user/{{users._id}}" class="btn btn-success">Thêm thành viên</a></h3>            
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>Ảnh</th>
+        <th>Họ và tên</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    {{#each users}}
+      <tr>
+        <td><img src={{this.avatar}} alt="" width="100" height="130"></td>
+        <td>{{this.fullName}}</td>
+        <td>{{this.email}}</td>
+        <td>
+          <a href="/user/edit/{{this._id}}" class="btn btn-success">Sửa</a>
+          <a href="/user/delete/{{this._id}}" onclick='return confirm("Are your sure?")' class="btn btn-danger">Xoá</a>
+        </td>
+      </tr>
+    {{/each}}
+      
+  </table>
+</div>

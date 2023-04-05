@@ -1,0 +1,28 @@
+<h3>{{viewTitle}}</h3>
+<form method="POST" action="/user/add" autocomplete="off">
+  <input type="hidden" name="id" value="{{user._id}}">
+  <div class="form-group">
+    <label for="">Họ và tên:</label>
+    <input type="text" class="form-control" placeholder="Nhập họ và tên" name="fullName" value="{{user.fullName}}" required>
+  </div>
+
+  <div class="form-group">
+    <label for="">Email:</label>
+    <input type="email" class="form-control" placeholder="Nhập email" name="email" value="{{user.email}}" required>
+  </div>
+
+  <div class="form-group">
+    <label for="">Ảnh:</label><br>
+    <input type="file" name="file" value="{{user.avatar}}" required>
+    {{!-- <input type="file" name="myFiles" multiple> --}}
+  </div>
+
+  <div class="form-group">
+    <label for="">Mật khẩu:</label>
+    <input type="password" class="form-control" placeholder="Password" name="password" value="{{user.password}}" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Lưu</button>
+  <a href="/user/list" class="btn btn-success">Danh sách user</a>
+</form>
+
